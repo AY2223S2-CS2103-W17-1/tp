@@ -26,19 +26,22 @@ public class Person {
     // Data fields
     private final Address address;
     private final Phone parentPhone;
+    private final Remark remark;
     private final Set<Tag> tags = new HashSet<>();
     private final TaskList taskList = new TaskList();
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Address address, Phone parentPhone, Set<Tag> tags) {
+    public Person(Name name, Phone phone, Email email, Address address, Phone parentPhone,
+                  Remark remark, Set<Tag> tags) {
         requireAllNonNull(name, phone, email, address, tags);
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
         this.parentPhone = parentPhone;
+        this.remark = remark;
         this.tags.addAll(tags);
     }
 
@@ -60,6 +63,10 @@ public class Person {
 
     public Phone getParentPhone() {
         return parentPhone;
+    }
+
+    public Remark getRemark() {
+        return remark;
     }
 
     /**
@@ -157,7 +164,9 @@ public class Person {
                 .append("; Address: ")
                 .append(getAddress())
                 .append("; ParentPhone: ")
-                .append(getParentPhone());
+                .append(getParentPhone())
+                .append(" Remark: ")
+                .append(getRemark());
 
         Set<Tag> tags = getTags();
         if (!tags.isEmpty()) {
@@ -166,5 +175,5 @@ public class Person {
         }
         return builder.toString();
     }
-
 }
+
