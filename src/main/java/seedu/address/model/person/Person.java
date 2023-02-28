@@ -13,8 +13,8 @@ import seedu.address.model.task.Task;
 import seedu.address.model.task.TaskList;
 
 /**
- * Represents a Person in the address book.
- * Guarantees: details are present and not null, field values are validated, immutable.
+ * Represents a Person in the address book. Guarantees: details are present and not null, field
+ * values are validated, immutable.
  */
 public class Person {
 
@@ -28,11 +28,13 @@ public class Person {
     private final Phone parentPhone;
     private final Set<Tag> tags = new HashSet<>();
     private final TaskList taskList = new TaskList();
+    private final Remark remark;
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Address address, Phone parentPhone, Set<Tag> tags) {
+    public Person(Name name, Phone phone, Email email, Address address, Phone parentPhone,
+            Remark remark, Set<Tag> tags) {
         requireAllNonNull(name, phone, email, address, tags);
         this.name = name;
         this.phone = phone;
@@ -40,6 +42,7 @@ public class Person {
         this.address = address;
         this.parentPhone = parentPhone;
         this.tags.addAll(tags);
+        this.remark = remark;
     }
 
     public Name getName() {
@@ -62,25 +65,28 @@ public class Person {
         return parentPhone;
     }
 
+    public Remark getRemark() {
+        return remark;
+    }
+
     /**
-     * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
-     * if modification is attempted.
+     * Returns an immutable tag set, which throws {@code UnsupportedOperationException} if
+     * modification is attempted.
      */
     public Set<Tag> getTags() {
         return Collections.unmodifiableSet(tags);
     }
 
     /**
-     * Returns true if both persons have the same name.
-     * This defines a weaker notion of equality between two persons.
+     * Returns true if both persons have the same name. This defines a weaker notion of equality
+     * between two persons.
      */
     public boolean isSamePerson(Person otherPerson) {
         if (otherPerson == this) {
             return true;
         }
 
-        return otherPerson != null
-                && otherPerson.getName().equals(getName());
+        return otherPerson != null && otherPerson.getName().equals(getName());
     }
 
     /**
@@ -92,17 +98,16 @@ public class Person {
     }
 
     /**
-     * Adds a task to the list.
-     * The task must not already exist in the list.
+     * Adds a task to the list. The task must not already exist in the list.
      */
     public void addTask(Task t) {
         taskList.add(t);
     }
 
     /**
-     * Replaces the given task {@code target} in the list with {@code editedTask}.
-     * {@code target} must exist in the list.
-     * The task identity of {@code editedTask} must not be the same as another existing task in the list.
+     * Replaces the given task {@code target} in the list with {@code editedTask}. {@code target}
+     * must exist in the list. The task identity of {@code editedTask} must not be the same as
+     * another existing task in the list.
      */
     public void setTask(Task target, Task editedTask) {
         requireNonNull(editedTask);
@@ -111,16 +116,15 @@ public class Person {
     }
 
     /**
-     * Removes {@code key} from this {@code taskList}.
-     * {@code key} must exist in the list.
+     * Removes {@code key} from this {@code taskList}. {@code key} must exist in the list.
      */
     public void removeTask(Task key) {
         taskList.remove(key);
     }
 
     /**
-     * Returns true if both persons have the same identity and data fields.
-     * This defines a stronger notion of equality between two persons.
+     * Returns true if both persons have the same identity and data fields. This defines a stronger
+     * notion of equality between two persons.
      */
     @Override
     public boolean equals(Object other) {
@@ -133,8 +137,7 @@ public class Person {
         }
 
         Person otherPerson = (Person) other;
-        return otherPerson.getName().equals(getName())
-                && otherPerson.getPhone().equals(getPhone())
+        return otherPerson.getName().equals(getName()) && otherPerson.getPhone().equals(getPhone())
                 && otherPerson.getEmail().equals(getEmail())
                 && otherPerson.getAddress().equals(getAddress())
                 && otherPerson.getTags().equals(getTags());
@@ -149,15 +152,10 @@ public class Person {
     @Override
     public String toString() {
         final StringBuilder builder = new StringBuilder();
-        builder.append(getName())
-                .append("; Phone: ")
-                .append(getPhone())
-                .append("; Email: ")
-                .append(getEmail())
-                .append("; Address: ")
-                .append(getAddress())
-                .append("; ParentPhone: ")
-                .append(getParentPhone());
+        builder.append(getName()).append("; Phone: ").append(getPhone()).append("; Email: ")
+                .append(getEmail()).append("; Address: ").append(getAddress())
+                .append("; ParentPhone: ").append(getParentPhone()).append("; Remark: ")
+                .append(getRemark());
 
         Set<Tag> tags = getTags();
         if (!tags.isEmpty()) {
