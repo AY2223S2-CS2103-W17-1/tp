@@ -25,7 +25,7 @@ title: Developer Guide
 ### Architecture
 
 ### UI component
-The UI consists of a MainWindow that is made up of different parts. 
+The UI consists of a MainWindow that is made up of different parts.
 For instance, `CommandBox`, `ResultDisplay`, `PersonListPanel`, `ScoreListPanel`,
 `TaskListPanel`, `StatusBarFooter` etc. All theses, including the MainWindow,
 inherit from the abstract UiPart class which captures the commonalities between
@@ -187,7 +187,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 3a1. MATHUTORING shows an error message.
 
       Use case resumes at step 2.
-    
+
 * 3b. The given command argument(s) are invalid.
     * 3b1. MATHUTORING shows an error message.
 
@@ -318,7 +318,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 5b. The given score's index is invalid.
 
     * 5b1.  MATHUTORING informs the tutor that the index is invalid.
-  
+
       Use case resumes at step 3.
 
 **Use case: Export a student's progress**
