@@ -27,11 +27,11 @@ title: Developer Guide
 ### UI component
 The UI consists of a MainWindow that is made up of different parts. 
 For instance, `CommandBox`, `ResultDisplay`, `PersonListPanel`, `ScoreListPanel`,
-`TaskListPanel`, `StatusBarFooter` etc. All theses, including the MainWindow, 
-inherit from the abstract UiPart class which captures the commonalities between 
+`TaskListPanel`, `StatusBarFooter` etc. All theses, including the MainWindow,
+inherit from the abstract UiPart class which captures the commonalities between
 classes that represent parts of visible GUI.
 
-The UI component uses the JavaFx UI framework. The layout of these UI 
+The UI component uses the JavaFx UI framework. The layout of these UI
 parts are defined in matching `.fxml` files that are in the `src/main/resources/view`
 folder. For example, the layout of the `MainWindow` is specified in `MainWindow.fxml`.
 
@@ -40,9 +40,9 @@ The UI component,
 * listens for changes to `Model` data so that the UI can be
 updated with the modified data.
 * keeps a reference to the `Logic` component, because the UI relies on the `Logic`
-to execute the commands. 
+to execute the commands.
 * depends on some classes in the `Model` component, as it displays `Person` object
-residing in the `Model`. 
+residing in the `Model`.
 
 ### Logic component
 
@@ -187,7 +187,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 3a1. MATHUTORING shows an error message.
 
       Use case resumes at step 2.
-      
+    
 * 3b. The given command argument(s) are invalid.
     * 3b1. MATHUTORING shows an error message.
 
@@ -256,7 +256,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 1. Tutor requests to add a score.
 2. MATHUTORING creates the score with score label, score value and score date.
-3. MATHUTORING stores the score to the score list storage. 
+3. MATHUTORING stores the score to the score list storage.
 
     Use case ends.
 
@@ -267,7 +267,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 1a1. MATHUTORING informs the tutor that there is missing element.
 
       Use case resumes at step 2.
-  
+
 * 1b. MATHUTORING detects that score label, score value or score date has an invalid format.
 
   * 1b1. MATHUTORING informs the tutor that the form of new score is invalid.
@@ -294,7 +294,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
    Use case ends.
 
 **Extensions**
-  
+
 * 2a. The list is empty.
 
   Use case ends.
@@ -306,7 +306,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
       Use case resumes at step 2.
 
 * 4a. The score list is empty.
- 
+
   Use case ends.
 
 * 5a. The given student's index is invalid.
@@ -318,7 +318,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 5b. The given score's index is invalid.
 
     * 5b1.  MATHUTORING informs the tutor that the index is invalid.
-      
+  
       Use case resumes at step 3.
 
 **Use case: Export a student's progress**
@@ -336,10 +336,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 
-* 5a. The given file name is invalid. 
+* 5a. The given file name is invalid.
 
   * 5a1. File manager informs the tutor that the file name is invalid.
-    
+
     Use case resumes at step 5.
 
 * 5b. A file with the exact same name and type exists and is currently being opened.
@@ -348,7 +348,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
   currently being opened.
 
     Use case resumes at step 5.
-    
+
 **Use case: Import application data via CLI**
 
 **MSS**
@@ -359,8 +359,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     Use case ends.
 
 **Extensions**
-* 1a. MATHUTORING detects a command format error. 
-  
+* 1a. MATHUTORING detects a command format error.
+
   Use case resumes at step 1.
 
 * 1b. MATHUTORING detects the file does not follow the parsing format.
@@ -383,7 +383,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 * 6a. MATHUTORING detects the file does not follow the parsing format.
- 
+
   Use case resumes at step 3.
 
 **Use case: Export application data via CLI**
@@ -396,8 +396,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     Use case ends.
 
 **Extensions**
-* 1a. MATHUTORING detects a command format error. 
-  
+* 1a. MATHUTORING detects a command format error.
+
   Use case resumes at step 1.
 
 **Use case: Export application data via GUI**
@@ -412,8 +412,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     Use case ends.
 
 **Extensions**
-* 2a. File explorer closed by Tutor by mistake. 
-  
+* 2a. File explorer closed by Tutor by mistake.
+
   Use case resumes at step 1.
 
 * 2b. File explorer closed by Tutor
@@ -438,8 +438,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
 * **Tutors**: Private math tuition teachers that will be using the application
-* **Students' progress**: For our current version, the progress of a student is tracked through 
-the number of tasks the student has completed 
+* **Students' progress**: For our current version, the progress of a student is tracked through
+the number of tasks the student has completed
 * **Students' performance**: For our current version, the performance of a student is tracked through a view
 of the student's scores. In future implementation, a student's performance will be shown in a line chart
 
