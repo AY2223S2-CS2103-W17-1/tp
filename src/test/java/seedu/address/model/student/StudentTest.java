@@ -63,7 +63,7 @@ public class StudentTest {
     }
 
     @Test
-    public void isSamePerson() {
+    public void isSameStudent() {
         // same object -> returns true
         assertTrue(ALICE.isSameStudent(ALICE));
 
@@ -80,7 +80,7 @@ public class StudentTest {
         assertFalse(ALICE.isSameStudent(editedAlice));
 
         // name differs in case, all other attributes same -> returns false
-        Student editedBob = new StudentBuilder(BOB).withName(VALID_NAME_BOB.toLowerCase()).build();
+        Student editedBob = new StudentBuilder(BOB).withName("bob").build();
         assertFalse(BOB.isSameStudent(editedBob));
 
         // name has trailing spaces, all other attributes same -> returns false
