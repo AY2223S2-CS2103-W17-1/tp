@@ -103,8 +103,12 @@ Adds a student to the student list.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS c/CONTACT_PARENT [t/TAG]…​`
 
-<div markdown="span" class="alert alert-primary">:bulb: Tip:
-   A student can have any number of tags (including 0)
+<div markdown="span" class="alert alert-primary">
+
+:bulb: Tips:<br>
+* A student is allowed to have alphanumeric or numeric names, however, special characters (e.g. `à`, `_`) are not allowed.
+* If a student does not have a phone number, their parent's contact number can be used as the student's phone number.
+* A student can have any number of tags (including 0)
 </div>
 
 Examples:
